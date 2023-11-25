@@ -26,6 +26,7 @@
                             data-id="56f94dc"
                             data-element_type="column"
                             data-settings='{"background_background":"classic"}'
+                            style="background-image: url({{asset($influencer_cards[0]->image_path)}})"
                         >
                             <div
                                 class="elementor-widget-wrap elementor-element-populated"
@@ -43,7 +44,7 @@
                                         <h2
                                             class="elementor-heading-title elementor-size-default"
                                         >
-                                            Brand Buzz
+                                            {{$influencer_cards[0]->heading}}
                                         </h2>
                                     </div>
                                 </div>
@@ -54,7 +55,8 @@
                                     data-widget_type="text-editor.default"
                                 >
                                     <div class="elementor-widget-container">
-                                        Influencer-Infused Marketing
+                                        {{$influencer_cards[0]->subHeading}}
+
                                     </div>
                                 </div>
                                 <div
@@ -88,6 +90,8 @@
                             data-id="fa2fe80"
                             data-element_type="column"
                             data-settings='{"background_background":"classic"}'
+                            style="background-image: url({{asset($influencer_cards[1]->image_path)}})"
+
                         >
                             <div
                                 class="elementor-widget-wrap elementor-element-populated"
@@ -105,7 +109,7 @@
                                         <h2
                                             class="elementor-heading-title elementor-size-default"
                                         >
-                                            Influencers
+                                            {{$influencer_cards[1]->heading}}
                                         </h2>
                                     </div>
                                 </div>
@@ -116,7 +120,7 @@
                                     data-widget_type="text-editor.default"
                                 >
                                     <div class="elementor-widget-container">
-                                        Influencer representation and management
+                                        {{$influencer_cards[1]->subHeading}}
                                     </div>
                                 </div>
                                 <div

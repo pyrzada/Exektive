@@ -44,7 +44,7 @@
                             fetchpriority="high"
                             width="768"
                             height="1024"
-                            src="wp-content/uploads/2023/10/social-media-marketing-concept-marketing-with-applications-1-768x1024.jpg"
+                            src="{{asset($who_we_are->image_path)}}"
                             class="attachment-large size-large wp-image-272"
                             alt=""
                             srcset="
@@ -154,19 +154,10 @@
                         <div class="elementor-image-box-wrapper">
                             <div class="elementor-image-box-content">
                                 <h3 class="elementor-image-box-title">
-                                    Who We Are ?
+                                    {{$who_we_are->heading}}
                                 </h3>
                                 <p class="elementor-image-box-description">
-                                    Creating to Inspire Since 2022. SkyMark
-                                    Influencer Marketing has helped companies
-                                    strategize and implement their creative
-                                    visions. Our growing Marketing Agency is
-                                    driven by passionate thinkers who work
-                                    closely with each brand and influencer to
-                                    create strategies that produce
-                                    unparalleled results. We love creators and
-                                    we love brands, at SkyMark, both are
-                                    elevated."
+                                    {{$who_we_are->description}}
                                 </p>
                             </div>
                         </div>

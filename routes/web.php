@@ -13,12 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WebsiteController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('banners', 'BannerController');
+Route::resource('who_we_ares', 'WhoWeAreController');
+Route::resource('influencer_cards', 'InfluencerCardController');
+Route::resource('brands', 'BrandController');
 Route::get('/images', 'HomeController@images')->name('images.index');

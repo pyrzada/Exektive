@@ -4274,7 +4274,7 @@
                             >
                                 @include('components.banner')
                                 @include('components.whoweare')
-                                @include('components.services')
+                                @include('components.influencerCards')
                                 @include('components.brands')
                                 @include('components.contact')
                                 @include('components.footer')
@@ -4391,7 +4391,7 @@
                             <div class="ast-footer-copyright">
                                 <p>
                                     Copyright &copy; 2023 Exektive | Powered by
-                                    <a href="https://webcrucials.com/">Web Crucials</a>
+                                    <a href="https://behlole.github.io/" target="_blank">M Behlole Aqil</a>
                                 </p>
                             </div>
                         </div>

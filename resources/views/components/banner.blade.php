@@ -3,8 +3,10 @@
     data-id="e8e8895"
     data-element_type="section"
     data-settings='{"background_background":"classic"}'
+    style="background-image: url({{asset($banner->image_path)}})"
 >
-    <div class="elementor-background-overlay"></div>
+    <div class="elementor-background-overlay"
+    ></div>
     <div class="elementor-container elementor-column-gap-no">
         <div
             class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4c147b6"
@@ -65,7 +67,7 @@
                         <h1
                             class="elementor-heading-title elementor-size-default"
                         >
-                            Elevate Your Brand with SkyMark!
+                            {{$banner->heading}}
                         </h1>
                     </div>
                 </div>
@@ -120,8 +122,7 @@
                             }
                         </style>
                         <p>
-                            Let SkyMark Grow Your Business In Partnership
-                            With The Best Influencers In The Industry
+                            {{$banner->description}}
                         </p>
                     </div>
                 </div>
@@ -141,7 +142,7 @@
                                         class="elementor-button-content-wrapper"
                                     >
                                       <span class="elementor-button-text"
-                                      >Reach Out Instantly</span
+                                      >{{$banner->button_text}}</span
                                       >
                                     </span>
                             </a>

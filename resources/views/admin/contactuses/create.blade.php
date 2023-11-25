@@ -24,6 +24,10 @@
                 <label for="image" class="form-label">Image</label>
                 <input type="file" class="form-control" id="image" name="image" accept="image/*">
             </div>
+            <div class="mb-3">
+                <label for="bannerImage" class="form-label">Banner Image</label>
+                <input type="file" class="form-control" id="bannerImage" name="bannerImage" accept="image/*">
+            </div>
             <button type="submit" class="btn btn-primary">Create Contact Us Entry</button>
         </form>
     </div>

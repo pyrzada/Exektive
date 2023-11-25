@@ -17,6 +17,7 @@
             <tr>
                 <th>Description</th>
                 <th>Image</th>
+                <th>Banner Image</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -25,6 +26,8 @@
                 <tr>
                     <td>{{ $contactUs->description }}</td>
                     <td><img src="{{ asset($contactUs->image_path) }}" alt="Contact Us Image" style="max-width: 100px;">
+                    <td><img src="{{ asset($contactUs->banner_image_path) }}" alt="Contact Us Banner Image"
+                             style="max-width: 100px;">
                     </td>
                     <td>
                         <a href="{{ route('contactuses.show', $contactUs->id) }}" class="btn btn-info">View</a>

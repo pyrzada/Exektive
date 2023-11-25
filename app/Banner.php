@@ -11,5 +11,6 @@ class Banner extends Model
         'description',
         'button_text',
         'image_path',
+        'banner_image_path'
     ];
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContactUsTable extends Migration
+class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateContactUsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contact_us', function (Blueprint $table) {
+        // In create_messages_table.php
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->text('description');
-            $table->string('image_path')->nullable(); // Assuming you store the image path
-            $table->string('banner_image_path')->nullable(); // Assuming you store the image path
+            $table->string('name');
+            $table->string('email');
+            $table->text('purpose');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateContactUsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact_us');
+        Schema::dropIfExists('messages');
     }
 }

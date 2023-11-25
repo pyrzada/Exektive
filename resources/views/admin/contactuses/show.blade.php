@@ -10,6 +10,11 @@
             <strong>Image:</strong>
             <img src="{{ asset($contactUs->image_path) }}" alt="Contact Us Image" style="max-width: 300px;">
         </div>
+        <div>
+            <strong>Banner Image:</strong>
+            <img src="{{ asset($contactUs->banner_image_path) }}" alt="Contact Us Banner Image"
+                 style="max-width: 300px;">
+        </div>
 
         <a href="{{ route('contactuses.index') }}" class="btn btn-secondary mt-3">Back to Contact Us Entries</a>
     </div>

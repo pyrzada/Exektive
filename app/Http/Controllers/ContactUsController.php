@@ -26,20 +26,29 @@ class ContactUsController extends Controller
         $request->validate([
             'description' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'bannerImage' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
         ]);
 
         // Upload image
         $imagePath = null;
+        $bannerImagePath = null;
         if ($request->hasFile('image')) {
             $imageName = time() . '.' . $request->image->extension();
             $request->image->move(public_path('images'), $imageName);
             $imagePath = 'images/' . $imageName;
+        }
+        if ($request->hasFile('bannerImage')) {
+            $bannerImageName = time() . '.' . $request->bannerImage->extension();
+            $request->bannerImage->move(public_path('images'), $bannerImageName);
+            $bannerImagePath = 'images/' . $bannerImageName;
         }
 
         // Create ContactUs
         ContactUs::create([
             'description' => $request->description,
             'image_path' => $imagePath,
+            'banner_image_path' => $bannerImagePath,
         ]);
 
         return redirect()->route('contactuses.index')->with('success', 'ContactUs created successfully.');
@@ -65,6 +74,7 @@ class ContactUsController extends Controller
         $request->validate([
             'description' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'bannerImage' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         // Update ContactUs
@@ -75,9 +85,17 @@ class ContactUsController extends Controller
             $request->image->move(public_path('images'), $imageName);
             $imagePath = 'images/' . $imageName;
         }
+        $bannerImagePath = $contactUs->banner_image_path;
+        if ($request->hasFile('bannerImage')) {
+            // Upload new image
+            $bannerImageName = time() . '.' . $request->bannerImage->extension();
+            $request->bannerImage->move(public_path('images'), $bannerImageName);
+            $bannerImagePath = 'images/' . $bannerImageName;
+        }
         $contactUs->update([
             'description' => $request->description,
             'image_path' => $imagePath,
+            'banner_image_path' => $bannerImagePath,
         ]);
 
         return redirect()->route('contactuses.index')->with('success', 'ContactUs updated successfully.');
@@ -89,4 +107,5 @@ class ContactUsController extends Controller
         $contactUs->delete();
         return redirect()->route('contactuses.index')->with('success', 'ContactUs deleted successfully.');
     }
+
 }

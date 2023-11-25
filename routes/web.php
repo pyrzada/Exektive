@@ -23,4 +23,6 @@ Route::resource('who_we_ares', 'WhoWeAreController');
 Route::resource('influencer_cards', 'InfluencerCardController');
 Route::resource('brands', 'BrandController');
 Route::resource('contactuses', 'ContactUsController');
+Route::resource('messages', 'MessageController');
+Route::post('messages/guest', 'MessageController@storeGuest')->name('messages.storeGuest');
 Route::get('/contact-us', 'WebsiteController@contactUs')->name('contact');

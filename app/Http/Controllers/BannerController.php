@@ -27,19 +27,15 @@ class BannerController extends Controller
             'heading' => 'required',
             'description' => 'required',
             'button_text' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-        // Upload image
-        $imageName = time() . '.' . $request->image->extension();
-        $request->image->move(public_path('images'), $imageName);
 
         // Create banners
         Banner::create([
             'heading' => $request->heading,
             'description' => $request->description,
-            'button_text' => $request->button_text,
-            'image_path' => 'images/' . $imageName,
+            'button_text' => $request->button_text
         ]);
 
         return redirect()->route('banners.index')->with('success', 'Banner created successfully.');

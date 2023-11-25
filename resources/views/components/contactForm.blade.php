@@ -7,12 +7,12 @@
             <div class="elementor-widget-wrap elementor-element-populated">
                 <div class="elementor-element elementor-element-2f729bf elementor-widget elementor-widget-heading"
                      data-id="2f729bf" data-element_type="widget" data-widget_type="heading.default">
-                    <div class="elementor-widget-container">
+                    <div class="elementor-widget-container" style="margin: auto;text-align: center">
                         <h2 class="elementor-heading-title elementor-size-default">Contact Us</h2></div>
                 </div>
                 <div class="elementor-element elementor-element-c16e003 elementor-widget elementor-widget-text-editor"
                      data-id="c16e003" data-element_type="widget" data-widget_type="text-editor.default">
-                    <div class="elementor-widget-container">
+                    <div class="elementor-widget-container" style="margin: auto;text-align: center;width: 50%">
                         <style>/*! elementor - v3.16.0 - 20-09-2023 */
                             .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap {
                                 background-color: #69727d;
@@ -63,50 +63,57 @@
                                     class="elementor-element elementor-element-f774ebb elementor-widget elementor-widget-wpforms"
                                     data-id="f774ebb" data-element_type="widget" data-widget_type="wpforms.default">
                                     <div class="elementor-widget-container">
-                                        <div class="wpforms-container " id="wpforms-473">
+                                        @if(session('success'))
+                                            <div class="alert alert-success mt-3"
+                                                 style="text-align: center;color: #FF793D;">
+                                                {{ session('success') }}
+                                            </div>
+                                        @endif
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger mt-3">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+                                        <div class="wpforms-container " id="wpforms-473"
+                                             style="margin: auto;width: 50%;align-content: center;align-items: center">
                                             <form id="wpforms-form-473"
-                                                  class="wpforms-validate wpforms-form wpforms-ajax-form"
-                                                  data-formid="473" method="post" enctype="multipart/form-data"
-                                                  action="/contact/" data-token="6bdfacead4c404fde6d1bb04a9dfb760"
-                                                  novalidate="novalidate">
-                                                <noscript class="wpforms-error-noscript">Please enable JavaScript in
-                                                    your browser to complete this form.
-                                                </noscript>
-                                                <div class="wpforms-field-container">
+                                                  class="wpforms-validate wpforms-form wpforms-ajax-form" method="post"
+                                                  action="{{route('messages.storeGuest')}}">
+                                                @csrf
+                                                <div class="wpforms-field-container"
+                                                     style="display: flex;flex-direction: column;gap: 15px">
                                                     <div id="wpforms-473-field_0-container"
                                                          class="wpforms-field wpforms-field-name" data-field-id="0">
-                                                        <label class="wpforms-field-label wpforms-label-hide"
-                                                               for="wpforms-473-field_0">Name <span
-                                                                class="wpforms-required-label">*</span></label><input
+                                                        <input
                                                             type="text" id="wpforms-473-field_0"
                                                             class="wpforms-field-large wpforms-field-required"
-                                                            name="wpforms[fields][0]" placeholder="Name" required="">
+                                                            style="width: 100%"
+                                                            name="name" placeholder="Name" required>
                                                     </div>
                                                     <div id="wpforms-473-field_1-container"
                                                          class="wpforms-field wpforms-field-email" data-field-id="1">
-                                                        <label class="wpforms-field-label wpforms-label-hide"
-                                                               for="wpforms-473-field_1">Email <span
-                                                                class="wpforms-required-label">*</span></label><input
-                                                            type="email" id="wpforms-473-field_1"
+                                                        <input
+                                                            type="email" id="email"
                                                             class="wpforms-field-large wpforms-field-required"
-                                                            name="wpforms[fields][1]" placeholder="Email"
-                                                            spellcheck="false" required=""></div>
+                                                            style="width: 100%"
+                                                            name="email" placeholder="Email"
+                                                            spellcheck="false" required></div>
                                                     <div id="wpforms-473-field_2-container"
                                                          class="wpforms-field wpforms-field-textarea" data-field-id="2">
-                                                        <label class="wpforms-field-label wpforms-label-hide"
-                                                               for="wpforms-473-field_2">Comment or
-                                                            Message</label><textarea id="wpforms-473-field_2"
-                                                                                     class="wpforms-field-medium"
-                                                                                     name="wpforms[fields][2]"
-                                                                                     placeholder="Write Message Purpose"></textarea>
+                                                       <textarea id="wpforms-473-field_2"
+                                                                 class="wpforms-field-medium"
+                                                                 name="purpose"
+                                                                 style="width: 100%"
+                                                                 placeholder="Write Message Purpose"
+                                                                 required></textarea>
                                                     </div>
                                                 </div><!-- .wpforms-field-container -->
-                                                <div class="wpforms-submit-container"><input type="hidden"
-                                                                                             name="wpforms[id]"
-                                                                                             value="473"><input
-                                                        type="hidden" name="wpforms[author]" value="1"><input
-                                                        type="hidden" name="wpforms[post_id]" value="107">
-                                                    <button type="submit" name="wpforms[submit]" id="wpforms-submit-473"
+                                                <div class="wpforms-submit-container">
+                                                    <button type="submit"
                                                             class="wpforms-submit" data-alt-text="Sending..."
                                                             data-submit-text="Submit" aria-live="assertive"
                                                             value="wpforms-submit">Submit
@@ -116,7 +123,8 @@
                                                          class="wpforms-submit-spinner" style="display: none;"
                                                          width="26" height="26" alt="Loading"></div>
                                             </form>
-                                        </div>  <!-- .wpforms-container -->        </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

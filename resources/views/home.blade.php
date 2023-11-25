@@ -37,6 +37,11 @@
                                 {{ __('Contact Us') }}
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('messages.index') }}">
+                                {{ __('Messages') }}
+                            </a>
+                        </li>
                         <!-- Add more menu items as needed -->
                     </ul>
                 </div>

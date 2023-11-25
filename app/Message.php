@@ -4,8 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ContactUs extends Model
+class Message extends Model
 {
-    protected $table = 'contact_us';
     protected $guarded = [];
 }

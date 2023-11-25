@@ -32,6 +32,11 @@
                                 {{ __('Brands') }}
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('contactuses.index') }}">
+                                {{ __('Contact Us') }}
+                            </a>
+                        </li>
                         <!-- Add more menu items as needed -->
                     </ul>
                 </div>

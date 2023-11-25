@@ -69,7 +69,7 @@
                                         <div class="elementor-button-wrapper">
                                             <a
                                                 class="elementor-button elementor-button-link elementor-size-sm"
-                                                href="contact/index.html"
+                                                href="/contact-us"
                                             >
                                             <span
                                                 class="elementor-button-content-wrapper"
@@ -133,7 +133,7 @@
                                         <div class="elementor-button-wrapper">
                                             <a
                                                 class="elementor-button elementor-button-link elementor-size-sm"
-                                                href="contact/index.html"
+                                                href="/contact-us"
                                             >
                                             <span
                                                 class="elementor-button-content-wrapper"

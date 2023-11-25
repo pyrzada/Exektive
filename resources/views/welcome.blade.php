@@ -4010,7 +4010,7 @@
                                     >
                         <span class="site-logo-img"
                         ><a
-                                href="index.html"
+                                href="/"
                                 class="custom-logo-link transparent-custom-logo"
                                 rel="home"
                                 itemprop="url"
@@ -4075,7 +4075,7 @@
                                                             id="menu-item-115"
                                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115"
                                                         >
-                                                            <a href="contact/index.html" class="menu-link"
+                                                            <a href="/contact-us" class="menu-link"
                                                             >Contact</a
                                                             >
                                                         </li>
@@ -4125,14 +4125,14 @@
                                     >
                                         <a
                                             class="ast-custom-button-link"
-                                            href="contact/index.html"
+                                            href="/contact-us"
                                             target="_self"
                                         >
                                             <div class="ast-custom-button">Contact Now</div>
                                         </a
                                         ><a
                                             class="menu-link"
-                                            href="contact/index.html"
+                                            href="/contact-us"
                                             target="_self"
                                         >Contact Now</a
                                         >
@@ -4172,7 +4172,7 @@
                                 >
                       <span class="site-logo-img"
                       ><a
-                              href="index.html"
+                              href="/"
                               class="custom-logo-link transparent-custom-logo"
                               rel="home"
                               itemprop="url"
@@ -4272,12 +4272,7 @@
                                 data-elementor-id="255"
                                 class="elementor elementor-255"
                             >
-                                @include('components.banner')
-                                @include('components.whoweare')
-                                @include('components.influencerCards')
-                                @include('components.brands')
-                                @include('components.contact')
-                                @include('components.footer')
+                                @yield('appContent')
                             </div>
                         </div>
                     </article>
@@ -4341,7 +4336,7 @@
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-255 current_page_item menu-item-112"
                                             >
                                                 <a
-                                                    href="index.html"
+                                                    href="/"
                                                     aria-current="page"
                                                     class="menu-link"
                                                 >Home</a
@@ -4350,7 +4345,7 @@
                                             <li
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115"
                                             >
-                                                <a href="contact/index.html" class="menu-link"
+                                                <a href="/contact-us" class="menu-link"
                                                 >Contact</a
                                                 >
                                             </li>

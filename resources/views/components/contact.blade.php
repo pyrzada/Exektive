@@ -34,14 +34,7 @@
                     data-widget_type="text-editor.default"
                 >
                     <div class="elementor-widget-container">
-                        We&#8217;re eager to hear from you! Whether you
-                        have inquiries about our services, need
-                        assistance, or want to discuss a potential
-                        collaboration, our team is here to assist. Reach
-                        out via the <strong>Contact form</strong> , and
-                        we&#8217;ll respond promptly. Your journey
-                        towards impactful influencer marketing begins
-                        here!
+                        {{$contact_us->description}}
                     </div>
                 </div>
                 <div
@@ -54,7 +47,7 @@
                         <div class="elementor-button-wrapper">
                             <a
                                 class="elementor-button elementor-button-link elementor-size-sm"
-                                href="contact/index.html"
+                                href="/contact-us"
                             >
                                     <span
                                         class="elementor-button-content-wrapper"
@@ -89,7 +82,7 @@
                             loading="lazy"
                             width="1024"
                             height="1024"
-                            src="wp-content/uploads/2023/10/social-media-marketing-concept-marketing-with-applications-2-1024x1024.jpg"
+                            src="{{asset($contact_us->image_path)}}"
                             class="attachment-large size-large wp-image-354"
                             alt=""
                             srcset="

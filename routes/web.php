@@ -22,4 +22,5 @@ Route::resource('banners', 'BannerController');
 Route::resource('who_we_ares', 'WhoWeAreController');
 Route::resource('influencer_cards', 'InfluencerCardController');
 Route::resource('brands', 'BrandController');
-Route::get('/images', 'HomeController@images')->name('images.index');
+Route::resource('contactuses', 'ContactUsController');
+Route::get('/contact-us', 'WebsiteController@contactUs')->name('contact');
